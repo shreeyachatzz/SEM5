@@ -1,0 +1,20 @@
+5. ARP Poisoning
+
+Information between all DNS is shared every morning at 5.30am IST across the globe.
+
+DOS: Denial of Service Attack
+-When you are an attacker and you get a server down by sending too many packets to it.
+
+MITM: Man in the Middle Attack
+- Once you have done DOS on a particular IP now if someone tries to communicate to the down machine (say M1) then you take their request and send them you own IP/MAC address and thus instead of going to M1 the people start communicating with the attacker and sensitive info ( which was supposed to be secure in the M1 machine) is now accessible to the attacker.
+- the attacker can cange the packet and send it to the destination.
+- This can only happen over the Local Area Network.. Not over the internet
+
+
+Steps:
+1. Export selected bytes from Wireshark of the reply you get on pinging
+2. After changing the MAC info of the frame
+3. << file2cable -v -i et0 -f <file name> >>
+
+
+

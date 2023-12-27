@@ -1,0 +1,115 @@
+6. ARP Request Reply:
+
+Braodcasting can happen only within the network.
+
+Gateway=router.
+
+Consider communication b/w 192.168.1.2 and 192.168.2.1
+The 3rd octet is different which means that they belong to different netowrk so normal broadcasting can not happen.
+
+In this case the Frame format at the DLL will be a bit different.
+DLL Frame in this case:
+when 192.168.1.2 is trying to talk to 192.168.2.1
+ _________________________________________________________________________
+|	Source MAC 	|   Info from Network Layer  | 	Destination MAC   |
+|-----------------------|----------------------------|--------------------|
+|   MAC of 192.168.1.2  | Packet from N/W layer      | Gateway MAC Addr.  | 
+|_______________________|____________________________|____________________|
+
+When this goes to the physical layer it goes to the gateway MAC of the router given in the Dest. MAC address specified. Here the decapsulation only occurs till the third layer as due to the presence of the MAC of gateway we know that further comm is not possible as they are not in the same network. Then again the data is borken down to the physical layer and passed to the next router.
+ ________________________________________________________________
+|                                  			 	 |
+| SOURCE--> GATEWAY1---> GATEWAY2 ---> GATEWAY3 ---> DESTINATION |
+|________________________________________________________________|
+
+Thus Routers are called : L3 devices.
+Switch: L2 and L3
+L2/L3: Layering method.
+
+After reaching the same network machine MAC address is found and thus the entire comm to the application layer takes place in the final step.
+
+MAC Addr: 6 byte, 48 bit
+
+The first 3 bytes of the MAC addr. are the Vendor ID. The next 3bytes are the seq. no. of the machine.
+
+Command:<< arp -a >>: to view that ARP cache. -The life of the ARP cache is pretty small.
+The cache does not have the gateway MAC add.
+There is no way to have the MAC address of google.com as that info will only be accessible if you are a part of the google network.
+
+PROGRAMMING PARADIGM:
+ ___________________________________
+|	      4GL(SQL)              |
+|    ___________________________    |
+|   | 	High Level Language     |   |
+|   |   _____________________   |   |
+|   |  |  Assembly language  |  |   |
+|   |  |       _____         |  |   |
+|   |  |      |     |        |  |   |
+|   |  |      | BIN |        |  |   |
+|   |  |      |	110 |        |  |   |
+|   |  |      |_____|        |  |   |
+|   |  |_____________________|  |   |
+|   |___________________________|   |
+|___________________________________|
+
+NETWORK PARADIGM:
+     ___________________________    
+    | 	        FQDN            |   
+    |   _____________________   |  
+    |  |    IP Addresses     |  |  
+    |  |       _____         |  | 
+    |  |      |     |        |  |    
+    |  |      | MAC |        |  |    
+    |  |      |_____|        |  |    
+    |  |_____________________|  |    
+    |___________________________|  
+
+FQDN-> IP & IP->FQDN: DNS
+IP-> MAC: ARP
+MAC-> IP: RARP
+
+THE ARP PROTOCOL:
+
+THE FRAME FOR BROADCAST:
+1st  6 bytes: Destination MAC Add (Broadcast: ff:ff:ff:ff:ff:ff)
+next 6 bytes: Source MAC Add.
+next 2 bytes: type (0806-ARP)
+next 2 bytes: Ethernet Frame (00 01- Internet)
+next 2 bytes: protocol type (08 00-IP)
+next 1 byte: Hardware size (06- 6byte size of MAC Address)
+next 1 byte: Protocol Size (04- 4 byte(32bit) for IP)
+next 2 bytes: Req/Reply (00 01-request)
+next 4 bytes: Sender MAC Address
+Next 4 bytes: Sender IP Address
+Next 4 bytes: Target MAC Address (unknown during Request)
+next 4 bytes: Target IP address
+Next : Trailer Zeroes
+
+THE FRAME FOR REPLY:
+1st  6 bytes: Destination MAC Add (Broadcast: ff:ff:ff:ff:ff:ff)
+next 6 bytes: Source MAC Add.
+next 2 bytes: type (0806-ARP)
+next 2 bytes: Ethernet Frame (0001- Internet)
+next 2 bytes: protocol type (08 00-IP)
+next 1 byte: Hardware size (06- 6byte size of MAC Address)
+next 1 byte: Protocol Size (04- 4 byte(32bit) for IP)
+next 2 bytes: Req/Reply (00 02-reply)
+next 4 bytes: Sender MAC Address
+Next 4 bytes: Sender IP Address
+Next 6 bytes: Target MAC Address (unknown during Request)
+next 4 bytes: Target IP address
+Next : Trailer Zeroes
+
+
+
+
+
+
+
+
+
+
+
+
+
+

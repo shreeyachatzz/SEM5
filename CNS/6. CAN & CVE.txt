@@ -1,0 +1,28 @@
+
+6. CAN & CVE
+
+Packet size for ping for different systems:
+32Bytes- Windows
+56Bytes - Linux
+
+Dynamic: Keeps changing
+
+PERM: Permanent entry
+To make a permanent entry: arp -i eth0 -s <ip of the gateway> <MAC add of the gateway>
+
+By making this permanent no one can change your MAC Addr and you are saved from ARP Poisoning.
+
+To delete entry:
+arp -i eth0 -d <ip of the info u wanna delete from cache>
+
+CAN: Candidate number-if you lodge a complaint you are given a CAN
+After a theshold number of CAN from several people.. then developers are notified.
+
+Patch: There is a downtime
+Hotfix: No downtime
+
+CVE: Common Vulnerability and Exposure
+-the patch/hotfix with steps is posted as a CVE
+
+cve.mtre.org- to see all CVE
+nvd.nist.org- usa DATABASE of the vulnerabitity

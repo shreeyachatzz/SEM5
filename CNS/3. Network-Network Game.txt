@@ -1,0 +1,37 @@
+3. Network-Network Game
+
+To communicate b/w IP adress:
+1. To communicate one ip needs the MAC address
+2. To get the MAC address IP1 does ARP BROADCAST and gets the reply as UNICAST.
+3. This communication is required because while Network Layer info is known as we know the IP address outfor communication in the Data Link Layer we need to know the MAC address for which we do the ARP Broadcast.
+
+ARP BROADCAST: who is 192.168.2.3(dest. ip)? tell 192.168.2.4(source)
+
+Frame 1st 6bits: Dest. MAC Addr.
+
+There are 4 octets in an IP add. -CIDR (Classless Inder Domain Routing)
+
+If we have an IP add 192.168.2.0/28 then we know that 28bits of the 32 bits will occup the info about the network part.
+Thus the add will be: 
+ _________________________________
+| IP Add	| Subnet Mask     |
+|---------------|-----------------|
+| 192.168.2.0	| 255.255.255.240 |
+|_______________|_________________|
+
+Block Size: 256-240=16
+ _____________________________________________________
+| BLOCK	   | N/W Addr.	  |   BroadCast Addr.         |
+|----------|--------------|---------------------------|
+|1st block | 192.168.2.0  | 192.168.2.15 (0'comp->15) |
+|2nd block | 192.168.2.16 | -------------	      |
+|3rd block | 192.168.2.32 | --------------	      |
+|__________|______________|___________________________|
+
+Number of hosts: 2^(n)-2
+
+
+
+The Block size can be calculated a
+
+

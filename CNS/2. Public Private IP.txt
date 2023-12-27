@@ -1,0 +1,41 @@
+Public Private IP
+
+Port add: 16bits
+
+IP Add: 32 (2^32)
+
+Organizations that control how IP addresses are assigned: IETF(Indian Engineering Task Force) IEEE AIAMA
+
+LAN: can go with Private IP
+Servers: can go with Public IP
+
+Command: <<ipconfig /all>> : to see the IPs 
+Your device may have one private ip(the ip of the router or wifi you are connected to) but to access the internet you need a public IP which is automatically assigned to you when you try to connect to the internet.
+
+Private IP Series:
+192.168.X.X
+10.X.X.X
+172.16.X.X-172.31.X.X
+
+		Private Interface
+	     /
+Proxy Server
+             \
+		Public Interface
+
+You have a private IP so your device communicates with the private IP of the Proxy server then the Proxy Server assigns you a public IP so that you can access the internet. This is helpful in case of high traffic in your server. e.g. the server of our college. Thus a Proxy Server is required.
+Adv:
+- utilizing less number of Public IPs(public IPs are not free); with just one Public IP of the proxy server you are able to access the internet.
+- Proxy also caches the webpages to 
+
+UTM: Universal Threat Management Devices
+- Proxy
+- caching
+- Filtering
+- Anti-Spam
+
+Blocking IP is done by firewall.
+
+TRAI: Telephone Regulatory Authority of India.
+The Gateway keeps track of 6months of the private IP and accesses.
+

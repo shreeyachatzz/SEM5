@@ -1,0 +1,26 @@
+COMMANDS:
+To check hops: tracert www.google.com
+to see all IP info: ipconfig /all
+ARP Poisoning: file2cable -v -i et0 -f <file name> -sends changed file info into the et0 router.
+To make a permanent entry: arp -i eth0 -s <ip of the gateway> <MAC add of the gateway>- to safeguard from ARP poisoning
+To delete IP info: arp -i eth0 -d <ip of the info u wanna delete from cache>
+To change owner of a file to root: sudo chown root <<filename>>
+To enable Set-UID bit: sudo chmod 4755 <filename>
+To see all info about all files in a folder: ls -l 
+To see permission info about a particular file: ls -l <filename>
+
+FULL FORMS:
+FQDN- Fully Qualified Domain Name
+PDU- Protocol Data Unit
+ISP- Internet Service Provider
+UTM: Universal Threat Management Device
+TRAI: Telephone Regulatory Authority of India.
+CIDR: Classless Inder Domain Routing
+DOS: Denial of Service Attack
+MITM: Man in the Middle Attack
+PERM: Permanent entry (in wireshark)
+CVE: Common Vulnerability and Exposure
+CAN: Candidate number
+RUID: Real User ID
+EUID: Effective User ID
+

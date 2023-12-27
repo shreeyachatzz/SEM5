@@ -1,0 +1,60 @@
+Life of a Packet:
+
+OSI Model: Application, Presentation, Session, Transport, Network, Data Link Layer, Physical Layer
+TCP/IP Model: Application Layer(First 3), Transport Layer, Internet Layer(instead of network Layer), Network Access Layer( Last 2)
+
+Application Layer:
+FQDN- Fully Qualified Domain Name
+PDU- Protocol Data Unit
+ISP- Internet Service Provider
+
+Application Layer: Payload (www.google.com)
+
+Transport Layer: Segment+ Destination PortNo.(Fixed) + Source Port number(random)
+Port Number is a special number assigned to a particular service running at a particular identification number.
+Port number: 16bit
+
+Name	| Port No.
+___________________
+HTTPS	|  443
+HTTP	|  80
+FTP	|  21-20
+SMTP	|  25
+SSH	|  22
+TELNET	|  23
+
+NETWORK LAYER/ INTERNET LAYER: Protocol-(Packet+Src IP+ Dest. IP)
+The IP addess is given by the DNS
+IP Adress: 32bit (dotted decimal notation)
+
+DATA LINK LAYER: Src MAC+ Frame+ Dest. MAC
+MAC add: 48 bit (hex notation)
+
+The frame is changed to bits which travel to other places.
+
+Gateway-> Router: the number of gateways is the number of hops 
+Command to check: <<tracert www.google.com>>
+tracert sends 3 packets to check the time taken to reach each hop.
+To check IP detail: IP Lookup
+First hop is to the ISP.
+
+To check your IP: www.whatismyip.com
+
+Maximum number of Hops that can happen: 30
+
+Under Ocean Cable is faster than sending to Satellite.- submarinecablemap.com
+Landing Station- jaha par cable link ho rha hai.
+FEA- Flag Europe Asia
+
+
+
+
+
+
+
+
+
+
+
+
+
